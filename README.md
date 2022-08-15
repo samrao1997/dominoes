@@ -1,10 +1,12 @@
 # Dominoes
+
 I have been playing a kind of dominoes with my roommate that I can't seem to find online. I am interested
-in the theory and maybe developing a good strategy for the game, so I am going to implement it. 
+in the theory and maybe developing a good strategy for the game, so I am going to implement it.
 
 Then maybe train a agent to do some reinforcement learning.
 
 ## Domino Set (Tiles)
+
     - Each tile is divided into two square ends which are marked with a number 0 through 9
         - 3 examples of tiles
             - [ 0 | 0 ]
@@ -15,17 +17,17 @@ Then maybe train a agent to do some reinforcement learning.
     - Therefore there are 45 tiles in total [10 choose 2 = 45]
 
 ## Setup
+
     1. All 45 tiles are flipped face down to not see the values
     2. Each player draws a certain number of tiles as their hand
         - 2 players = 13 tiles
         - 3 or more players = 11 tiles
-    3. To see who goes first, each player draws a single tile from 
+    3. To see who goes first, each player draws a single tile from
     the leftover tiles [*also know as boneyard*]. The player that has
     the highest valued tile goes first. **Then play goes clockwise.**
 
 ## Rules
 
+## Resources
 
-
-    
-
+This is my first time implementing pygame and I used [https://github.com/World-of-Domino/pygame-dominos] as a jumping off point.
