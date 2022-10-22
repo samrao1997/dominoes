@@ -3,12 +3,13 @@ from typing import List
 import random
 
 from domino import Domino
+from layout import Layout
 
 
 @dataclass
 class Board():
 
-        
+
     def generate_boneyard(self, n = 9):
         for i in range(n):
             for j in range(n):
@@ -16,9 +17,11 @@ class Board():
                     continue
                 
                 self.boneyard.append(Domino(i, j))
+                
+    
     
     boneyard: List[Domino] = field(default_factory=generate_boneyard)
-    layout: List[Domino] = []
+    layout: Layout = Layout()
     
     # layout
     # This is the layout of the board. It is a list of dominoes. 
