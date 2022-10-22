@@ -1,13 +1,14 @@
-from dataclasses import dataclass
-from typing import List
-
-from domino import Domino
+from objects.domino import Domino
 
 
-@dataclass
+
 class Hand():
-    dominoes : List[Domino] = []
     
+    def __init__(self):
+        self.dominoes = []
+    
+    def __str__(self):
+        return str(self.dominoes)
     
     def play(self, domino: Domino):
         if domino in self.dominoes:
@@ -15,3 +16,8 @@ class Hand():
             return True
         else:
             return False
+        
+    def draw(self, domino: Domino):
+        self.dominoes.append(domino)
+        
+        

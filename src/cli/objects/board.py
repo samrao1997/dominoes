@@ -1,37 +1,26 @@
-from dataclasses import dataclass, field
-from typing import List
+
 import random
 
-from domino import Domino
-from layout import Layout
+from objects.domino import Domino
+from objects.layout import Layout
 
 
-@dataclass
 class Board():
+    def __init__(self):
+        self.boneyard = []
+        self.layout = Layout()
+        self.generate_boneyard()
 
 
     def generate_boneyard(self, n = 9):
-        for i in range(n):
-            for j in range(n):
-                if i == j:
-                    continue
-                
-                self.boneyard.append(Domino(i, j))
-                
-    
-    
-    boneyard: List[Domino] = field(default_factory=generate_boneyard)
-    layout: Layout = Layout()
-    
-    # layout
-    # This is the layout of the board. It is a list of dominoes. 
-    # The first domino and the last domino are the ends of the layout where you can play
-    # But also when people play doubled is make a new list of dominoes inside the layout
-    
-    
-    
-    
-    
+        for i in range(n + 1):
+            for j in range(n + 1):
+                domino = Domino(i, j)
+                if domino not in self.boneyard:
+                    self.boneyard.append(Domino(i, j))
+                    
+        return self.boneyard
+            
                 
     def draw_from_boneyard(self):
         idx = random.randint(0, len(self.boneyard) - 1)

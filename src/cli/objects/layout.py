@@ -1,14 +1,12 @@
-from dataclasses import dataclass
-from typing import List
-
-from domino import Domino
+from objects.domino import Domino
 
 
-@dataclass
 class Layout():
-    layout = List[Domino] = []
-    tails: List[int] = []
-    value: int = 0
+    
+    def __init__(self):
+        self.layout = []
+        self.tails = []
+        self.value = 0
     
     
     
