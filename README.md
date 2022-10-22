@@ -28,6 +28,16 @@ Then maybe train a agent to do some reinforcement learning.
 
 ## Rules
 
+## TODO
+
+- display board on command line
+- AI
+
+## Notes
+
+- player selects domino from hand displays possible places [should it show the end values? Nope]
+- when player selects a position show possible orientations
+
 ## Resources
 
 This is my first time implementing pygame and I used [https://github.com/World-of-Domino/pygame-dominos] as a jumping off point.
