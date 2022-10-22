@@ -31,6 +31,8 @@ Then maybe train a agent to do some reinforcement learning.
 ## TODO
 
 - display board on command line
+- game logic
+- input actions
 - AI
 
 ## Notes

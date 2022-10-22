@@ -17,6 +17,12 @@ class Layout():
             if domino.num1 == tail or domino.num2 == tail:
                 result.append(i)
         return result
+    
+    def calc_value(self):
+        self.value = 0
+        for tail in self.tails:
+            self.value += tail
+        return self.value 
 
 
 
