@@ -1,7 +1,9 @@
-# Dominoes
+# Dominoes -- Keller 5
 
 I have been playing a kind of dominoes with my roommate that I can't seem to find online. I am interested
 in the theory and maybe developing a good strategy for the game, so I am going to implement it.
+
+It will be called Keller 5
 
 Then maybe train a agent to do some reinforcement learning.
 

@@ -73,3 +73,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+[(1,2)] -> [(1,2), (2,3)]
+-> [(3,1), (1,2), (2,3)] -> [(3,3), (3,1), (1,2), (2,3)] plays double but doesn't create another tail till closed
+-> [(6,3), (3,3), (3,1), (1,2), (2,3)] Creates another tail
+== [[(6,3), (3,3), (3,1), (1,2), (2,3)], [(3,3)]] Tails 6, 3, 3, 3
+
+
+tails
+for line in layout:
+    ltail = line[0][0]
+    rtail = line[-1][1]
+    
+but the value of the other lines dont count till extended
+also logic for creating new line? when double is surrounded make new line with double
+"""
