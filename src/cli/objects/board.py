@@ -29,7 +29,21 @@ class Board():
     
     def get_tails(self):
         # get the ends of the layout
-        pass
+        return self.layout.tails
+    
+    def get_valid_placements(self, domino: Domino):
+        placements = []
+        for idx, tail in enumerate(self.get_tails()):
+            if domino.num1 == tail or domino.num2 == tail:
+                placements.append((idx, tail))
+        return placements
+    
+    def play(self, domino: Domino):
+        self.layout.layout.append(domino)
+        self.layout.tails.append(domino.num1)
+        self.layout.tails.append(domino.num2)
+        self.layout.calc_value()
+
     
     
     

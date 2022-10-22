@@ -19,6 +19,8 @@ def setup():
     
     # first player
     first_player = random.choice([player1, player2])
+    first_player.play(board, first_player.hand.dominoes[0])
+    print(board.layout.layout)
     
     
 def display_state():
@@ -50,6 +52,7 @@ def main():
     # main game loop
     while True:
         inp = input("What would you like to do? ")
+        
         
         
         # QUIT
