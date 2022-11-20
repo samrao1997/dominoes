@@ -58,3 +58,6 @@ class Layout:
 
             else:
                 self.value += line[0].num1 + line[-1].num2
+
+    def add_domino(self, domino):
+        pass

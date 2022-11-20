@@ -2,24 +2,24 @@ from dataclasses import dataclass
 
 
 from objects.domino import Domino
+from objects.board import Board
 from objects.hand import Hand
 
 
 class Player:
-    def __init__(self, board):
+    def __init__(self, board: Board):
         self.hand = Hand()
         self.score = 0
         self.board = board
 
     def play(self, domino: Domino):
+        # first domino to be played
         if self.board.layout.layout == []:
             go_again, score = self.board.play(domino)
             self.hand.play(domino)
 
             self.score += score
             return (True, go_again)
-        
-        
 
     def draw(self):
         domino = self.board.draw_from_boneyard()
