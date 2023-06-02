@@ -30,6 +30,9 @@ Then maybe train a agent to do some reinforcement learning.
 
 ## Rules
 
+If you play doubles go again - cant add to doubles untill closed
+go again if multiple of 5
+
 ## TODO
 
 - display board on command line
