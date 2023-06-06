@@ -58,9 +58,16 @@ class Game(object):
         self.board = Board()
         self.players = [Player(self.board) for _ in range(number_of_players)]
 
+    def print_all_dominos(self):
+        for idx, player in enumerate(self.players):
+            print(f"Player {idx}: {player.hand}")
+
+        print(f"Graveyard: {self.board.graveyard}")
+
 
 def main():
     game = Game()
+    game.print_all_dominos()
 
 
 if __name__ == "__main__":
