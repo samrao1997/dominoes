@@ -6,6 +6,7 @@ class Domino:
     def __init__(self, first, second):
         self.first = first
         self.second = second
+        self.marked = "None"
 
     def inverted(self):
         return Domino(self.second, self.first)
@@ -27,6 +28,38 @@ class Domino:
 
     def __contains__(self, key):
         return key == self.first or key == self.second
+
+
+class dNode:
+    def __init__(self):
+        self.domino = None
+        # NOTE: If current node is a double domino then there will be 3 chilren [4 if it is first domino]
+        # otherwise there is only 2
+        self.children = []
+
+    def set_domino(self, domino):
+        pass
+
+    def add_dNode(self, domino):
+        pass
+
+
+def get_leafs(root):
+    # gets the leafs of the dominos that we
+    if not root:
+        return []
+
+    leafs = []
+    stack = [root]
+    while stack:
+        dnode = stack.pop()
+
+        if dnode.children == []:
+            leafs.append(dnode)
+        else:
+            stack.extend(dnode.children)
+
+    return leafs
 
 
 class Player(object):
@@ -63,6 +96,11 @@ class Game(object):
             print(f"Player {idx}: {player.hand}")
 
         print(f"Graveyard: {self.board.graveyard}")
+
+    def start_game(self):
+        # init the number of players
+        # start the games
+        players = [Player(self.board) for _ in range(self.number_of_players)]
 
 
 def main():
