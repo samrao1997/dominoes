@@ -34,17 +34,46 @@ class dNode:
         self.domino = None
         # NOTE: If current node is a double domino then there will be 3 chilren [4 if it is first domino]
         # otherwise there is only 2
-        self.children = []
+        # self.children = []
+        self.left = None
+        self.right = None
+        self.top = None
+        self.bottom = None
 
-    def set_domino(self, domino):
-        pass
+    def add_dnode(self, domino, location):
+        if location not in ["left", "right", "top", "bottom"]:
+            # TODO: Raise exception location must be legal location
+            return False
 
-    def add_dNode(self, domino):
-        pass
+        if domino.first not in [self.domino.first, self.domino.second] or domino.second not in [
+            self.domino.first,
+            self.domino.second,
+        ]:
+            # TODO: Raise exception illegal domino
+            return False
+
+        if location == "top":
+            if self.domino.first != self.domino.second:
+                # TODO: Raise exception trying to top or bottom of a non double domino
+                return False
+            else:
+                # TODO: do double domino things with location set to top
+                return None
+
+        if location == "bottom":
+            if self.domino.first != self.domino.second:
+                # TODO: Raise exception trying to top or bottom of a non double domino
+                return False
+            else:
+                # TODO: do double domino things with location set to bottom
+                return None
+
+        # TODO: normal left and right
 
 
 def get_leafs(root):
     # gets the leafs of the dominos that we
+    # NOTE: this only works with a complete tree
     if not root:
         return []
 
@@ -53,10 +82,10 @@ def get_leafs(root):
     while stack:
         dnode = stack.pop()
 
-        if dnode.children == []:
+        # TODO: check if double that we can play on
+        if len(dnode.children) <= 1:
             leafs.append(dnode)
-        else:
-            stack.extend(dnode.children)
+        stack.extend(dnode.children)
 
     return leafs
 
