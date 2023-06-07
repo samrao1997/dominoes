@@ -6,7 +6,6 @@ class Domino:
     def __init__(self, first, second):
         self.first = first
         self.second = second
-        self.marked = "None"
 
     def inverted(self):
         return Domino(self.second, self.first)
@@ -84,6 +83,9 @@ class Board(object):
         dominos = [Domino(i, j) for i in range(10) for j in range(i, 10)]
         random.shuffle(dominos)
         return dominos
+
+    def get_ends(self):
+        pass
 
 
 class Game(object):
