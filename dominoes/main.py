@@ -52,23 +52,30 @@ class dNode:
             # TODO: Raise exception illegal domino
             return False
 
-        if location == "top":
-            if self.domino.first != self.domino.second:
-                # TODO: Raise exception trying to top or bottom of a non double domino
-                return False
-            else:
-                # TODO: do double domino things with location set to top
-                return None
+        match location:
+            case "top":
+                if self.domino.first != self.domino.second:
+                    # TODO: Raise exception trying to top or bottom of a non double domino
+                    return False
+                else:
+                    # TODO: do double domino things with location set to top
+                    return None
 
-        if location == "bottom":
-            if self.domino.first != self.domino.second:
-                # TODO: Raise exception trying to top or bottom of a non double domino
-                return False
-            else:
-                # TODO: do double domino things with location set to bottom
-                return None
+            case "bottom":
+                if self.domino.first != self.domino.second:
+                    # TODO: Raise exception trying to top or bottom of a non double domino
+                    return False
+                else:
+                    # TODO: do double domino things with location set to bottom
+                    return None
 
-        # TODO: normal left and right
+            case "left":
+                if self.domino.first != domino.first:
+                    domino = domino.inverted()
+
+            case "right":
+                if self.domino.second != domino.first:
+                    domino = domino.inverted()
 
 
 def get_leafs(root):
